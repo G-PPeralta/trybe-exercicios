@@ -1,0 +1,142 @@
+cat > recebe um input do usuário e pode inserir em outro arquivo (ctrl + D para sair)
+
+cat + > : joga o input dentro de um arquivo. Exemplo cat > cores.txt (digito os inputs que vão para dentro do arquivo cores.txt)
+
+cat + >> : acrescenta valores no arquivo criado
+
+Concatenando arquivos: Exemplo: cat cores.txt frutas.txt > tudo.txt - nesse exemplo, juntei os dois arquivos em um terceiro, o tudo.txt
+
+sort: ordena os arquivos
+
+sort < arquivo.txt : coloca os valores do arquivo.txt em ordem alfabética, mas sem alterar o arquivo, apenas exibindo no terminal
+
+sort < arquivo.txt > arquivoOrdenado.txt : jogo os valores ordenados em um terceiro arquivo
+
+who: permite ver quais usuários possuem autorização
+
+Enviar o output de um comando para outro comando: usa-se o pipeline (|). Ex: who | sort , nesse caso, o comando who, que mostra o usuário e as permissões, seria enviado ao comando sort, de forma que as permissões apareceriam em ordem alfabética. Outro exemplo: who | wc -l , mostra a quantidade de usuários
+
+ls -l ou ll: informações mais detalhadas, como tamanho do arquivo, permissões, data de alteração
+
+Permissões:
+
+r: pode ler arquivos e diretório
+w: pode editar o arquivo/diretório
+x: permite executar um arquivo ou acessar o arquivo/diretório pelo comando cd
+-: hífen no começo da sequência significa que é um arquivo comum
+d: a letra "d" no início da sequência indica um diretório
+
+A sequência é separada em 4 grupos: 1ª parte: - (arquivo comum) ou d (diretório) 1 caracter
+				     2ª parte: referente ao meu usuário: rwx 3 caracteres (ler, escrever e alterar)
+				     3ª parte: grupo do usuário, define o acesso que terão Ex: rwx
+				     4ª parte: outros usuários
+				     
+Exemplo: -rw-rw-r-- 
+(é um arquivo pois começa com -) 
+(meu usuário: pode ler e escrever, mas não executar: rw-) 
+(grupo: pode ler e escrever, mas não executar: rw-) 
+(outros usuários: somente ler: r--)
+
+As permissões podem ser alteradas pelo comando chmod:
+
+chmod u: alterações apenas para o usuário
+chmod g: alterações apenas para o grupo
+chmod o: alterações apenas para outros
+chmod a: para todos (all)
+
+para acrescentar, retirar ou manter permissões:
+usuário: chmod u+ (acrescenta) chmod u- (retira) chmod u= (mantém): Ex: chmod u+rw, chmod u-rw
+grupo: chmod g+ e chmode g-
+outros: chmod o+ e chmode o-
+
+Permissões | Links  | Proprietário | Grupo | Tamanho | Data e Hora   | Nome
+-----------|--------|--------------|-------|---------|---------------|---------
+  drwxr-xr-x | 2      | root         | root  | 4096    | Out 19 09:10  | composer/
+  
+Permissões => É possível verificar o tipo do item e nível de permissão para Leitura, Escrita e Execução de item ou diretório;
+Links => Número de ligações que o item possui, no caso do diretório, número de subdiretórios que possui;
+Proprietário => Quem é a pessoa dona, quem criou. É o diretório padrão da pessoa usuária, o home;
+Grupo => Grupo ao qual pertence o item ou diretório. Utilizado para dar permissões à outras pessoas;
+Tamanho => Em Bytes;
+Data e Hora => Momento em que foi criado ou última modificação;
+Nome => Nome do item ou diretório;
+
+Também é possível usar o modo octal. 
+
+Leitura r - 4
+Escrita w - 2
+Execução x - 1
+
+Esses valores são permissões com base em bits de ligados = 1 e desligados = 0
+
+rwx = 111 ( 7 | Acesso Total )
+r-- = 100 ( 4 | Somente Leitura )
+-w- = 010 ( 2 | Somente Escrita )
+--x = 001 ( 1 | Somente Execução )
+rw- = 110 ( 6 | Somente Leitura e Escrita )
+r-x = 101 ( 5 | Somente Leitura e Execução )
+-wx = 011 ( 3 | Somente Escrita e Execução )
+--- = 000 ( 0 | Todos Acessos Negados )
+
+ps : comando para verificar os processos sendo executados
+sleep: para o terminal durante um determinado tempo. Ex: sleep 5 (pausa o terminal por 5 segundos). Bastar teclar ctrl + z para suspender
+
+É possível deixar um processo executando em background e ir fazendo outras coisas. Ex: sleep 10 &
+Caso eu esqueça de usar o "&" para deixar rodando em segundo plano e tenha que suspender o processo com ctrl + z, basta eu utilizar o comando bg, que ele retorna o processo, mas dessa vez deixando ele rodando em background.
+
+jobs : comando para verificar os processos que estão rodando 
+
+fg : foreground, ele retoma um processo suspenso. Bastar utilizar fg %n, o "n" no caso é o número do processo suspenso que aparece no terminal
+Ex: uso o sleep 100, aí suspendo com o ctrl + z, para retomar, bastar usar fg %1, supondo que nesse caso seja o único processo suspenso
+
+ctrl + c: ele encerra o processo (enquanto o ctrl + z suspende).
+
+kill: para encerrar um processo que esteja rodando em background. Ex: kill %5, ou usar matar pelo PID, ex: kill 6050
+
+kil -9 + nº do PID: para forçar o encerramento do processo, posto que alguns não "aceitam" serem mortos
+
+find: comando para pesquisar em diretórios por arquivos ou outras pastas, de acordo com os parâmetros passados a ele. Esses parâmetros podem ser name , date , size e type . Caso nenhum atributo seja passado, ele pesquisará tudo que estiver dentro do diretório atual
+
+# Para listar todos os arquivos que terminam em .txt
+find . -name "*.txt"
+
+# Para localizar todos os diretórios
+find . -type d
+
+# Para localizar todos os arquivos
+find . -type f
+
+# Localizar tanto arquivos quanto diretórios que comecem
+# por algum trecho
+find ./teste -name exemplo*
+# Resultado
+./teste/exemplo.txt
+./teste/exemplo
+
+# Localizar somente arquivos que comecem por algum trecho
+find ./teste -type f -name "exemplo*"
+# Resultado
+./teste/exemplo.txt
+
+# Localizar somente diretórios que comecem por algum trecho
+find ./teste -type d -name "exemplo*"
+# Resultado
+./teste/exemplo
+
+history : comando que mostra o histórico de comandos que você executou no terminal. A quantidade ou o tamanho desse _"histórico"_ podem ser configurados para um número arbitrário de comandos ou para ver todo o histórico.
+# Mostra o histórico de comandos
+history
+# Pegar os últimos 10 comandos
+history | tail
+
+echo: comando utilizado em scripts ou no terminal para exibir mensagens na tela ou em um arquivo.
+
+echo "Este é um teste"
+# Resultado
+Este é um teste
+
+# Pode ser usado para colocar textos dentro de arquivos.
+echo "Este é mais um teste" > teste.txt
+cat teste.txt
+Este é mais um teste
+

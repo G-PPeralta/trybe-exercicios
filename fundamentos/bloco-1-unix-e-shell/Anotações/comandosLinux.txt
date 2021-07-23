@@ -1,0 +1,181 @@
+COMANDOS DO TERMINAL:
+
+ls lista todos os arquivos e diretórios do diretório atual
+
+ls -a lista mostrando os arquivos ocultos
+
+cd troca o diretório
+cd. referencia a própria pasta em que estou
+cd.. referencia ao diretório pai
+
+pwd print work directory, mostra o caminho completo dos diretórios
+
+less > mostra o conteúdo do arquivo como no cat, mas não joga direto no terminal misturando tudo, ele abre uma página nova no terminal, aí basta apertar a tecla "q" para sair.
+Para pesquisar uma palavra dentro dessa visualização (fazer busca dentro de um arquivo), basta usar uma barra ao fim seguido da palavra buscada. Ex: /div. Para passar para a próxima palavra, basta ir apertando a tecla "n" e, quando encerrar as ocorrências, apertar enter.
+
+grep > para pesquisar valores dentro de uma arquivo. Por exemplo, quero pesquisar a palavra div no arquivo index.html, basta usar grep div index.html
+
+grep -i > para pesquisar sem ser case sensitive (ignorando se a letra é maiúscula ou minúscula)
+
+grep -i '' > para pesquisar frases dentro do arquivo, basta inserir a frase procurada entre aspas simples. Exemplo: buscar a frase "o poderoso" dentro de index.html, grep -i 'o poderoso' index.html
+
+grep -iv > Mostra todos os valores que não correspondem com a busca
+
+grep -in > Mostra a linha em que se encontra a palavra buscada e também mostra o conteúdo. Exemplo: buscar a palavra 'tail' no arquivo 'Comandos" > grep -in 'tail' Comandos
+
+grep -ic > mostra a quantidade de vezes que aparece a palavra buscada
+
+wc (word counting) > mostra 3 valores. O primeiro é a quantidade de linhas. O segundo é a quantidade de palavras e o terceiro é a quantidade de caracteres.
+
+wc -w > mostra apenas a quantidade de palavras.
+
+wc -l > mostra apenas a quantidade de linhas.
+
+wc -c > quantidade de caracteres
+
+rm -rf > para remover diretórios com conteúdo dentro, posto que o rmdir não vai funcionar se o diretório não estiver vazio, ou seja, é uma remoção forçada
+
+head > é tipo o cat, mas mostra só as 10 primeiras linhas do conteúdo do arquivo (via de regra). Para mudar a quantidade de linhas, como por exemplo 5, basta usar head -5
+
+tail > mostra as 10 últimas linhas do arquivo. Para alterar a quantidade de linhas mostradas, é igual ao exemplo do head. Ex: tail -5 index.html
+
+ls -a > lista todos os arquivos e diretórios
+
+ls * > mostra todo o conteúdo dentro das pastas sem precisar entrar em cada uma delas
+
+ls ? > quando não lembro de algum caractere do nome. Exemplo, lembro que tem "crimba" em "Scrimba", mas não lembro que começa com "s". Posso usar ls ?crimba
+
+man > acessa o manual do comando selecionado. Ex: man ls
+
+whatis > mostra o que o comando faz. Ex: whatis cp
+
+aproppos > lista os comandos relacionados com aquilo que quero fazer. Ex aproppos copy
+
+less > mostra o conteúdo do arquivo como no cat, mas não joga direto no terminal misturando tudo, ele abre uma página nova no terminal, aí basta apertar a tecla "q" para sair.
+Para pesquisar uma palavra dentro dessa visualização (fazer busca dentro de um arquivo), basta usar uma barra ao fim seguido da palavra buscada. Ex: /div. Para passar para a próxima palavra, basta ir apertando a tecla "n" e, quando encerrar as ocorrências, apertar enter.
+
+grep > para pesquisar valores dentro de uma arquivo. Por exemplo, quero pesquisar a palavra div no arquivo index.html, basta usar grep div index.html
+
+grep -i > para pesquisar sem ser case sensitive (ignorando se a letra é maiúscula ou minúscula)
+
+grep -i '' > para pesquisar frases dentro do arquivo, basta inserir a frase procurada entre aspas simples. Exemplo: buscar a frase "o poderoso" dentro de index.html, grep -i 'o poderoso' index.html
+
+grep -iv > Mostra todos os valores que não correspondem com a busca
+
+grep -in > Mostra a linha em que se encontra a palavra buscada e também mostra o conteúdo. Exemplo: buscar a palavra 'tail' no arquivo 'Comandos" > grep -in 'tail' Comandos
+
+grep -ic > mostra a quantidade de vezes que aparece a palavra buscada
+
+wc (word counting) > mostra 3 valores. O primeiro é a quantidade de linhas. O segundo é a quantidade de palavras e o terceiro é a quantidade de caracteres.
+
+wc -w > mostra apenas a quantidade de palavras.
+
+wc -l > mostra apenas a quantidade de linhas.
+
+wc -c > quantidade de caracteres
+
+rm -rf > para remover diretórios com conteúdo dentro, posto que o rmdir não vai funcionar se o diretório não estiver vazio, ou seja, é uma remoção forçada
+
+head > é tipo o cat, mas mostra só as 10 primeiras linhas do conteúdo do arquivo (via de regra). Para mudar a quantidade de linhas, como por exemplo 5, basta usar head -5
+
+tail > mostra as 10 últimas linhas do arquivo. Para alterar a quantidade de linhas mostradas, é igual ao exemplo do head. Ex: tail -5 index.html
+
+ls -a > lista todos os arquivos e diretórios
+
+ls * > mostra todo o conteúdo dentro das pastas sem precisar entrar em cada uma delas
+
+ls *.txt > lista apenas os arquivos com a extensão .txt
+
+ls *.{txt,tbt} > lista duas extensões de arquivo.
+
+ls ? > quando não lembro de algum caractere do nome. Exemplo, lembro que tem "crimba" em "Scrimba", mas não lembro que começa com "s". Posso usar ls ?crimba
+
+man > acessa o manual do comando selecionado. Ex: man ls
+
+whatis > mostra o que o comando faz. Ex: whatis cp
+
+aproppos > lista os comandos relacionados com aquilo que quero fazer. Ex aproppos copy
+
+mv * ../ > move todos os arquivos para um diretório acima (pai)
+
+cat > recebe um input do usuário e pode inserir em outro arquivo (ctrl + D para sair)
+
+cat + > : joga o input dentro de um arquivo. Exemplo cat > cores.txt (digito os inputs que vão para dentro do arquivo cores.txt)
+
+cat + >> : acrescenta valores no arquivo criado
+
+Concatenando arquivos: Exemplo: cat cores.txt frutas.txt > tudo.txt - nesse exemplo, juntei os dois arquivos em um terceiro, o tudo.txt
+
+sort: ordena os arquivos
+
+sort < arquivo.txt : coloca os valores do arquivo.txt em ordem alfabética, mas sem alterar o arquivo, apenas exibindo no terminal
+
+sort < arquivo.txt > arquivoOrdenado.txt : jogo os valores ordenados em um terceiro arquivo
+
+who: permite ver quais usuários possuem autorização
+
+Enviar o output de um comando para outro comando: usa-se o pipeline (|). Ex: who | sort , nesse caso, o comando who, que mostra o usuário e as permissões, seria enviado ao comando sort, de forma que as permissões apareceriam em ordem alfabética. Outro exemplo: who | wc -l , mostra a quantidade de usuários
+less > mostra o conteúdo do arquivo como no cat, mas não joga direto no terminal misturando tudo, ele abre uma página nova no terminal, aí basta apertar a tecla "q" para sair.
+Para pesquisar uma palavra dentro dessa visualização (fazer busca dentro de um arquivo), basta usar uma barra ao fim seguido da palavra buscada. Ex: /div. Para passar para a próxima palavra, basta ir apertando a tecla "n" e, quando encerrar as ocorrências, apertar enter.
+
+grep > para pesquisar valores dentro de uma arquivo. Por exemplo, quero pesquisar a palavra div no arquivo index.html, basta usar grep div index.html
+
+grep -i > para pesquisar sem ser case sensitive (ignorando se a letra é maiúscula ou minúscula)
+
+grep -i '' > para pesquisar frases dentro do arquivo, basta inserir a frase procurada entre aspas simples. Exemplo: buscar a frase "o poderoso" dentro de index.html, grep -i 'o poderoso' index.html
+
+grep -iv > Mostra todos os valores que não correspondem com a busca
+
+grep -in > Mostra a linha em que se encontra a palavra buscada e também mostra o conteúdo. Exemplo: buscar a palavra 'tail' no arquivo 'Comandos" > grep -in 'tail' Comandos
+
+grep -ic > mostra a quantidade de vezes que aparece a palavra buscada
+
+wc (word counting) > mostra 3 valores. O primeiro é a quantidade de linhas. O segundo é a quantidade de palavras e o terceiro é a quantidade de caracteres.
+
+wc -w > mostra apenas a quantidade de palavras.
+
+wc -l > mostra apenas a quantidade de linhas.
+
+wc -c > quantidade de caracteres
+
+rm -rf > para remover diretórios com conteúdo dentro, posto que o rmdir não vai funcionar se o diretório não estiver vazio, ou seja, é uma remoção forçada
+
+head > é tipo o cat, mas mostra só as 10 primeiras linhas do conteúdo do arquivo (via de regra). Para mudar a quantidade de linhas, como por exemplo 5, basta usar head -5
+
+tail > mostra as 10 últimas linhas do arquivo. Para alterar a quantidade de linhas mostradas, é igual ao exemplo do head. Ex: tail -5 index.html
+
+ls -a > lista todos os arquivos e diretórios
+
+ls * > mostra todo o conteúdo dentro das pastas sem precisar entrar em cada uma delas
+
+ls *.txt > lista apenas os arquivos com a extensão .txt
+
+ls *.{txt,tbt} > lista duas extensões de arquivo.
+
+ls ? > quando não lembro de algum caractere do nome. Exemplo, lembro que tem "crimba" em "Scrimba", mas não lembro que começa com "s". Posso usar ls ?crimba
+
+man > acessa o manual do comando selecionado. Ex: man ls
+
+whatis > mostra o que o comando faz. Ex: whatis cp
+
+aproppos > lista os comandos relacionados com aquilo que quero fazer. Ex aproppos copy
+
+mv * ../ > move todos os arquivos para um diretório acima (pai)
+
+cat > recebe um input do usuário e pode inserir em outro arquivo (ctrl + D para sair)
+
+cat + > : joga o input dentro de um arquivo. Exemplo cat > cores.txt (digito os inputs que vão para dentro do arquivo cores.txt)
+
+cat + >> : acrescenta valores no arquivo criado
+
+Concatenando arquivos: Exemplo: cat cores.txt frutas.txt > tudo.txt - nesse exemplo, juntei os dois arquivos em um terceiro, o tudo.txt
+
+sort: ordena os arquivos
+
+sort < arquivo.txt : coloca os valores do arquivo.txt em ordem alfabética, mas sem alterar o arquivo, apenas exibindo no terminal
+
+sort < arquivo.txt > arquivoOrdenado.txt : jogo os valores ordenados em um terceiro arquivo
+
+who: permite ver quais usuários possuem autorização
+
+Enviar o output de um comando para outro comando: usa-se o pipeline (|). Ex: who | sort , nesse caso, o comando who, que mostra o usuário e as permissões, seria enviado ao comando sort, de forma que as permissões apareceriam em ordem alfabética. Outro exemplo: who | wc -l , mostra a quantidade de usuários

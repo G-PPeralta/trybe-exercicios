@@ -1,0 +1,21 @@
+HTTP: Linguagem comum entre cliente e servidor. É uma linguagem de texto, o que significa que as mensagens trocadas são quantificadas em bits. Cada mensagem é dividida em duas partes: o header e o body. O HTTP por si só não consegue transmitir dados. Ele ainda depende do protocolo TCP/IP para pegar as requisições e respostas entre duas máquinas.
+
+HTTP Headers: contém metadata (dados sobre dados) que incluem o tipo de requisição (GET, POST, PUT, DELETE), o caminho URL, o endereço IP dentre outros.
+
+HTTP Body: refere-se ao corpo da mensagem que está sendo transmitida, contém o HTML para a página que estamos querendo acessar. 
+
+HTTPS: É uma forma mais segura de comunicação que utiliza a encriptação. Para adicionar mais essa camada de segurança, o HTTPS utiliza um segundo mecanismo de segurança: o SSL.
+
+MÉTODOS HTTP:
+
+GET: é utilizado para LER informações encaminhadas pelo servidor para uma URL específica. As requisições GET são apenas para leitura, o que significa que os dados nunca poderão ser modificados no servidor. O servidor irá apenas retornar os dados, sem modificá-los. O efeito retornado será sempre o mesmo, independentemente do número de requisições feitas. Assim sendo, dizemos que requisições GET são IDEMPOTENTES , o que significa que o efeito  da requisição no servidor será sempre o mesmo - fazer milhões de requisições GET para o mesmo URL tem o mesmo efeito que uma única requisição. O método GET apenas retorna dados.
+
+POST: é utilizado para CRIAR UM NOVO RECURSO, como um formulário para login. O método POST não é nem seguro e nem idempotente. Fazer duas ou mais requisições POSTS resultará em novos recursos criados (mesmo que idênticos). Requisições POST são retornadas com o status code 201 (CREATED) e um novo caminho no header com o Link do recurso criado.
+
+PUT: é utilizado para atualizar o recurso identificado pelo URL. Esse método também pode ser utilizado para criar um novo recurso. Requisições PUT não são consideradas operações seguras, pois o estado da aplicação é modificado no servidor. No entanto, O MÉTODO PUT é IDEMPOTENTE porque múltiplas requisições PUT para atualizar um recurso têm o mesmo efeito que uma única requisição.
+
+DELETE: é utilizado para deletar um recurso identificado pelo URL. As requisições DELETE são idempotentes, pois quando deletamos um recurso ele será deletado. A resposta requisição é o status code 200 (OK) se o recurso for deletado com sucesso, ou 404 (NOT FOUND) se o recurso que será deletado não existir.
+
+REST (Representational State Transfer): é um estilo de arquitetura utilizado no design de aplicações Web. As regras do REST nos guiam a desenvolver sistemas mais performáticos, escaláveis, simples, de fácil manutenção e modificação, portátil e confiável.
+
+CURL: é um comando disponível na maioria dos sistemas baseados em Unix que serve para verificar conectividade, além transferir dados via terminal.

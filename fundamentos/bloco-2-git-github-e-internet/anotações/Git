@@ -1,0 +1,27 @@
+GIT:
+
+git init: cria uma pasta oculta de nome .git, que representa de fato o repositório.
+
+working area: diretório onde é mantida a versão do projeto em que estamos trabalhando. Ao criar arquivos dentro desse diretório, essas mudanças são observadas pelo git, e para que possam ser refletidas em nosso repositório, devemos adicionar esses arquivos ao stage (representa um espaço intermediário que agrupa arquivos modificados ou recém criados que desejamos adicionar ao repositório). Essa inclusão ocorre através do git add <arquivo>.
+
+Por fim, para adicionar os arquivos ao repositório, executamos o comando git commit. Ao fazer isso, é criada uma nova versão do projeto, a qual é identificada por um código hash. É a partir desse código que podemos voltar a trabalhar em outra versão quando preciso.
+
+Branch: um ramo, com o comando git.branch
+
+Sequência de comandos:
+
+1 - git init
+2 - git add <arquivo>
+3 - git commit -m <arquivo>
+
+Para criar um branch e trabalhar em cima dele:
+
+1 - git branch <nome do branch>
+2 - git branch (vai listar todos os branchs criados, destacando o que está sendo trabalhado atualmente)
+3 - git checkout <nome do branch> (para acessar o novo branch)
+4 - git checkout master (para voltar ao principal)
+
+
+
+
+
