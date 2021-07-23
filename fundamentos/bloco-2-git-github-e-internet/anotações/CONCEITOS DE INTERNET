@@ -1,0 +1,33 @@
+Internet:
+
+CLIENTE: é uma aplicação que está conectada à Internet. A sua principal função é receber a interação do usuário e traduzi-la em uma requisição para outro computador chamado Servidor Web. O meu computador é o cliente na relação cliente-servidor, e possui um endereço IP único.
+
+SERVIDOR: é um super computador conectado à Internet. Ele também tem o seu próprio endereço IP. O Servidor espera por requisições de outras máquinas (clientes). A principal função do Servidor é armazenar, processar e entregar páginas web para os Clientes. O servidor que usamos para fazer a busca por www.google.com é um Web Server.
+
+ENDEREÇO IP: é um identificador numérico para um dispositivo (computador, celular, tablet, impressora, roteador, servidor...) conectado à rede TCP/IP. Todo dispositivo conectado à Internet tem um endereço IP único que irá identificá-lo, e será usado para comunicar com outros dispositivos. Os endereços IP tem quatro campos de dígitos separados por pontos (exemplo: 244.155.65.2). Esses números são chamados de ENDEREÇOS LÓGICOS. O endereço lógico é convertido em um endereço físico por um software presente em nosso computador, chamado de MAC adress (controle de acesso à mídia).
+
+TCP/IP: Essa sigla refere-se à Transmission Control Protocol/Internet Protocol. Um protocolo é um conjunto de regras, e o protocolo TCP/IP é utilizado para transmitir dados na rede.
+
+ISP (INTERNET SERVICE PROVIDER): é o provedor de Internet. É qualquer empresa que nos fornece acesso à web.
+
+DNS (DOMAIN NAME SYSTEM): é usado para relacionar o endereço nominal (google.com) com o endereço IP. Os servidores DNS são responsáveis por localizar e traduzir para números (um endereço IP) as buscas por sites que digitamos no navegador.
+
+Port Number: O número de porta é um número de 16 bits utilizado para identificar uma porta específica no servidor, e está sempre associado ao endereço IP. O Port number é uma forma de identificar um processo específico encaminhado para o servidor.
+
+HOST: É qualquer computador conectado à rede, seja como cliente, servidor ou qualquer outro tipo de dispositivo. Cada host tem um endereço IP único. Para o site que estamos buscando, www.google.com , o host é o servidor web que hospeda a página na web. O Servidor é um tipo de host - uma máquina específica com endereço IP. Por outro lado, o host pode ser também uma organização inteira que fornece um serviço de hospedagem para manter inúmeros servidores web.
+
+HTTP: Hyper-text Transfer Protocol é o protocolo utilizado para a comunicação entre navegadores e servidores na Internet.
+
+URL (Uniform Resource Locators): identifica um recurso web específico.  O URL identifica o PROTOCOLO que será utilizado para comunicarmos com o servidor (https), o nome/DOMÍNIO do host (Ex: google.com) e o RECURSO que queremos acessar (Ex:travel/flights). PROTOCOLO - DOMÍNIO - RECURSO
+
+OUTRAS CONSIDERAÇÕES:
+
+O servidor em uma aplicação Web é quem recebe as requisições do cliente. O servidor espera por requisições HTTP de uma porta específica, sempre associada a um endereço IP. Com as requisições, ele vai realizar ações e enviar a resposta via HTTP. Todos os dados que viajam entre o cliente e o servidor são enviados através da rede Internet usando o protocolo TCP/IP.
+gy
+O banco de dados de uma aplicação web é onde a informação é armazenada de forma acessível, gerenciável e em constante atualização. Uma forma para lidarmos com um grande volume de dados é distribuir o tráfego de informações entre servidores no backend. O responsável por gerenciar o trânsito de informações de uma aplicação entre vários servidores backend é o que chamamos de BALANCEADOR DE CARGA.
+
+O balanceador de cargas resolve o problema de tráfego de dados distribuindo as requisições para servidores backend. No entanto, as vezes é sobrecarregado, mesmo com o balanceador. A solução para isso é separar o serviço por funcionalidade. É aqui que SERVIÇOS entra em ação.
+
+Um serviço é apenas outro servidor capaz de interagir com servidores, o que não acontece com um servidor Web, que interage apenas com o cliente.Cada serviço tem uma funcionalidade, como um serviço para autenticação de usuário ou serviços de busca. Assim, é possível quebrar o servidor Web da sua aplicação em múltiplos serviços, cada um com uma funcionalidade específica.
+
+Quando usuários do mundo todo começarem a acessar o seu site, eles podem ter um tempo de resposta maior devido à grande distância entre cliente e servidor. Uma forma de resolvermos esse problema é usando o que chamamos de REDE DE DISTRIBUIÇÃO DE CONTEÚDO, ou Content Delivery Network (CDN) . O CDN é um sistema de distribuição de servidores "proxy". Podemos entender um servidor proxy como sendo um intermediário entre cliente e servidor.

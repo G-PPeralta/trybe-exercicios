@@ -1,0 +1,36 @@
+Unix é montado em 3 níveis:
+
+1) Kernel: núcleo do sistema, gerencia os recursos do sistema, faz a detecção de todo o hardware indispensável para a máquina. Ele administra as principais funções dentro do sistema operacional, que inclui: gerenciamento de memória, de processos, de arquivos.
+
+Faz a comunicação com o hardware
+
+2) Shell: É a interface entre sistema operacional, o usuário e o núcleo do sistema. Em geral os shell usam uma interface de comando (linha de comando) ou interface gŕafica. A função do shell é ler a linha de comando, interpretar o seu significado, executar o comando e devolver o resultado para o usuário. Existem vários tipos de shell. Ex: SH, BASH, CSH, TCSH, ZSH.
+
+Faz a comunicação com o kernel. O comando utilizado no shell é enviado para o kernel que se comunica com o hardware (o shell é como se fosse um carro genérico, os tipos de shell, como o csh e o bash, são os tipos, como se fossem as marcas de carro)
+
+3) Aplicativos: Softwares e a maioria dos comandos do UNIX. Tudo o que se faz no UNIX é processo, cada processo possui um identificador único, chamado PID (process identifier), que carrega algumas informações, como: usuário proprietário, sessão do shell, estado atual (funcionando, suspenso ou aguardando), linha de comando utilizado, dentre outras informações. No UNIX, tudo é um arquivo, organizado em hierarquia raiz.
+
+
+/ = Raiz
+
+BOOT = arquivos de configuração para inicialização
+
+BIN = arquivos binários
+
+DEV = ficheiros especiais associados aos dispositivos do sistema
+
+ETC = scripts de inicialização, arquivos de configuração do sistema
+
+HOME = diretórios home para diferentes usuários
+
+PROC = mantém informações sobre o estado do sistema
+
+ROOT = diretório home do usuário root
+
+SBIN = binários de sistema importantes
+
+TMP = arquivos temporários
+
+USR (Unix System Resources) = aplicativos disponíveis na maioria das vezes a todos os usuários. Pode conter executáveis, bibliotecas e até documentação de softwares utilizados pelos usuários ou administradores do sistema.
+
+VAR = arquivos variáveis como logs e banco de dados

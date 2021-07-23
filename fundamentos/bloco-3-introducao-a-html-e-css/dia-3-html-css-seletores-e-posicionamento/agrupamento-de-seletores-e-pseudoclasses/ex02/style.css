@@ -1,0 +1,32 @@
+div:hover {
+    border: 1px solid black;
+}
+
+.div1 {
+    background: #0a81d1;
+    font-style: italic;
+}
+
+.div2 {
+    background: #253d5b;
+}
+
+.div3 {
+    background: #fffad6;
+    padding: 20px;
+    font-style: italic;
+}
+
+.div4 {
+    background: #57886c;
+}
+
+.div5 {
+    background: #d4dcff;
+    font-style: italic;
+}
+
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+}

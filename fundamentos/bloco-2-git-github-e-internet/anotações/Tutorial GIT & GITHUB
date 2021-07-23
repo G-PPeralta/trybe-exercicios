@@ -1,0 +1,69 @@
+TRABALHANDO NO REPOSITÓRIO LOCAL (GIT)
+
+1- criar um diretório que será transformado em repositório;
+
+2- utilizar o comando git init para transformar a pasta em um repositório; (para desfazer: rm -rf .git)
+
+3- criar o arquivo que será inserido no repositório (USAR code . para criar com o VS CODE)
+
+4- comando git status que informa o atual estado do diretório de trabalho
+
+5- git add <arquivo> para adicionar à lista dos arquivos que serão comitados
+
+5.0- git add . (para adicionar todos os arquivos de uma vez só)
+
+*REMOVER ARQUIVO
+  
+ QUE NÃO TENHA SIDO COMITADO comitado: git rm --cached <arquivo> 
+ QUE TENHA SIDO COMITADO: git rm <nome do arquivo>
+
+*RESSUSCITAR ARQUIVO REMOVIDO QUE TINHA SIDO COMITADO: git log --diff-filter=D --summary para ver o que tem de diferente e filtrar os logs que sejam igual ao status D, ou seja, que tenham arquivos que tenham sido deletados e exibí-los em forma de sumário. Em seguida, pegar o 4 primeiros caracteres do commit e usar o comando git checkout <4dígitos>~1 <arquivoRessuscitado>, depois disso, deve-se adicionar ao palco e commitar novamente.
+
+*PARA IGNORAR AQUIVOS QUE NÃO QUERO QUE VÁ PRO GIT: crio um arquivo .gitignore (touch .gitignore) e coloco dentro desse arquivo os tipos de arquivos que quero ignorar. Ex:
+
+touch .gitignore
+cat > .gitignore
+(adiciono *.txt para ignorar todos os arquivos com extensão .txt)
+git add .gitignore
+git commit -m "remove arquivos txt no gitignore"
+Se eu quiser adicionar mais arquivos ao gitignore
+cat >> .gitignore
+(listar o arquivo, pode ser específico ou não)
+
+*POSSO IGNORAR DIRETÓRIOS TAMBÉM (mesmo procedimento). Ex: ignorar o diretório relatorios - cat >> .gitignore (escrever relatorios/)
+
+*SITE PARA ARQUIVOS .gitignore PRONTOS: https://www.toptal.com/developers/gitignore
+
+6- git commit -m 'escrever uma msg tipo "adiciona arquivo tal"' <arquivo> (o -m é de mensagem, se usar só git commit vai sem mensagem)
+
+6.1- git add <arquivo> para colocar outro arquivo no stage
+
+6.2- Para acessar o HISTÓRICO do arquivo comitado: git log <arquivo> ou git log (para mostrar de todos)
+
+ENVIANDO AO GITHUB
+
+7- criar o repositório no github
+
+8- git remote add origin "URL SSH"
+
+9- git remote -v para testar se está tudo certo com a URL remota
+
+10- git push -u origin <nome do branch> master para fazer o push para o repositório remoto
+
+CRIANDO BRANCHS
+
+11- CRIAR UM BRANCH - git checkout -b <nome_do_novo_branch> (aqui CRIA O REPOSITÓRIO E JÁ VAI PRA ELE, mas poderia criar um branch como por exemplo "git branch gabriel", mas ele não vai para o repositório criado, continua no master.)
+
+12- git branch para IDENTIFICAR O BRANCH ATUAL
+
+13- git checkout para alterar da main/master para o branch e vice versa: Ex: git checkout main
+
+14- Para fazer o GIT MERGE, antes tenho que retornar para a main, usando o git checkout main
+
+15- para DELETAR um branch: git branch -d <nome do branch>,
+
+GIT FETCH:
+
+quando estiver trabalhando em um repositório clonado e precisar verificar se teve alguma alteração no arquivo, utilizo o git fetch
+
+APÓS O GIT FETCH, USAR O GIT PULL (O FETCH SÓ INDICA QUE EXISTEM ALTERAÇÕES, MAS NÃO AS PUXA)
