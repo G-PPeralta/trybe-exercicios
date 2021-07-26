@@ -7,7 +7,67 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 300;
     text-align: justify;
+    background: #7DD181;
+}
+
+h1,h2,h3 {
+    font-weight: 700;
+    color: #fff;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+table {
+    border: 1px solid green;
+    padding: 5px;
+}
+
+th, tr {
+    border: 1px solid green;
+    padding: 5px;
+}
+
+header {
+    background: #2A6B53;
+    padding: 2em 0;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+footer {
+    background:#2A6B53;
+    color: white;
+    text-align: center;
+    padding: 3em 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin-left: 2em;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    padding: .25em 0;
+}
+
+nav a:hover,
+nav a:focus {
+    color: #FDE74C;
 }
 
 .container {
