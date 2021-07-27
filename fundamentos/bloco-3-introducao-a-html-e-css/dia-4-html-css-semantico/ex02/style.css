@@ -94,6 +94,7 @@ footer {
 
 .facts-title {
     text-align: center;
+    padding: 30px;
     margin-bottom: 25px;
 }
 
@@ -104,4 +105,27 @@ footer {
 .center {
     text-align: center;
     margin-bottom: 1.125rem;
+}
+
+.references-list {
+    list-style: none;
+    text-align: center;
+}
+
+.references-list a {
+    color: #fff;
+}
+
+.references-list a:hover,
+.references-list a:focus {
+    color: #FDE74C;
+} 
+
+.sidebar.container {
+    text-align: center;
+}
+
+iframe {
+    border-radius: 15px;
+    padding: 10px;
 }
