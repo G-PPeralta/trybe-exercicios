@@ -4,6 +4,8 @@ let maiorNumero = 0;
 for(let i = 0; i < numbers.length; i += 1) {
     if(numbers[i] > maiorNumero) {
       maiorNumero = numbers[i]
-      console.log(maiorNumero);
+      
     }
 }
+
+console.log(maiorNumero);

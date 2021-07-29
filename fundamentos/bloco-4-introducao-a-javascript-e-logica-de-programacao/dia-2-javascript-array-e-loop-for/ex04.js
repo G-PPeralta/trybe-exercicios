@@ -6,12 +6,12 @@ let media = soma/numeroDeElementos;
 for(let i = 0; i < numbers.length; i += 1) {
   soma += numbers[i]
   media = soma/numeroDeElementos
-  console.log(media)
 }
+
+console.log(media)
 
 if(media > 20) {
   console.log("Valor maior que 20");
 } else {
   console.log("Valor menor que 20");
 }
-
