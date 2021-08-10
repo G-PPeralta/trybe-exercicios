@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Treino</title>
+  </head>
+  <body>
+    <main id="paiDoPai">
+      <section id="pai">
+        <section id="primeiroFilho"></section>
+
+        <section id="elementoOndeVoceEsta">
+          <section id="primeiroFilhoDoFilho"></section>
+          <section id="segundoEUltimoFilhoDoFilho"></section>
+        </section>
+
+        Atenção!
+
+        <section id="terceiroFilho"></section>
+
+        <section id="quartoEUltimoFilho"></section>
+      </section>
+    </main>
+
+    <script>
+      //AULA 01
+      document.querySelector("#elementoOndeVoceEsta").parentNode.style.color =
+        "red";
+
+      document.querySelector("#primeiroFilhoDoFilho").innerText =
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia blanditiis quia perferendis, dolorem aspernatur et aperiam repudiandae aliquid numquam veritatis! Dignissimos soluta, explicabo minima error excepturi quibusdam dolor? Sed, perferendis?";
+
+      document.querySelector("#pai").firstElementChild;
+
+      document.querySelector("#elementoOndeVoceEsta").previousElementSibling;
+
+      document.querySelector("#elementoOndeVoceEsta").nextSibling;
+
+      document.querySelector("#elementoOndeVoceEsta").nextElementSibling;
+
+      document.querySelector("#pai").lastElementChild.previousElementSibling;
+
+      //AULA 02
+
+      //ex01
+      let pai = document.getElementById("pai");
+      let irmaoElementoOndeVoceEsta = document.createElement("section");
+      irmaoElementoOndeVoceEsta.id = "irmaoElementoOndeVoceEsta";
+      pai.appendChild(irmaoElementoOndeVoceEsta)
+
+      //ex02
+      //PARA ADICIONAR CLASSE: document.querySelector("#elementoOndeVoceEsta").appendChild(terceiroEuFilho).classList.a("terceiroFilhoDoFilho")
+      let terceiroEuFilho = document.createElement("section");
+      document
+        .querySelector("#elementoOndeVoceEsta")
+        .appendChild(terceiroEuFilho)
+        .setAttribute("id", "terceiroFilhoDoFilho");
+
+      //ex03
+      let primeiroFilhoDoFilho = document.getElementById("primeiroFilhoDoFilho")
+      let filhoDoPrimeiroFilhoDoFilho = document.createElement("section");
+      filhoDoPrimeiroFilhoDoFilho.id = "primeiroFilhoDoFilho"
+      primeiroFilhoDoFilho.appendChild(filhoDoPrimeiroFilhoDoFilho) 
+
+      //ex04
+      document.querySelector("#primeiroFilhoDoFilho").parentNode.nextElementSibling
+
+      //AULA 03
+      let paiDoPai = document.querySelectorAll("#paiDoPai")
+
+      for(let i = 0; i < paiDoPai.length; i += 1) {
+        let element = paiDoPai[i]
+        if(element.innerText.includes("pai" , "elementoOndeVoceEsta", "primeiroFilhoDoFilho")) {
+          paiDoPai.removeChild(element)
+        }
+      }
+
+      
+    </script>
+  </body>
+</html>
