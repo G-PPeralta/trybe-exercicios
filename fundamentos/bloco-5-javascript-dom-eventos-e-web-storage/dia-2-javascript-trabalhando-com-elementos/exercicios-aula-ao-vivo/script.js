@@ -5,3 +5,9 @@ title.innerText = "Exercício 5.2 - JavaScript DOM";
 document.body.appendChild(title);
 
 //Adicione a tag main com a classe main-content como filho da tag body ;
+
+let main = document.createElement("main");
+main.classList.add("main-content");
+document.body.appendChild(main);
+
+//
