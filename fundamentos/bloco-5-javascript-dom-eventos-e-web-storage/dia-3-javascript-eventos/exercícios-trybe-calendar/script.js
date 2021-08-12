@@ -67,7 +67,7 @@ createDaysOfTheMonth();
 Adicione a este botão a ID "btn-holiday" .
 Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .*/
 
-let holiday = "feriados";
+let holiday = "Feriados";
 let buttonsContainer = document.querySelector(".buttons-container");
 let button = document.createElement("button");
 
@@ -93,3 +93,18 @@ function color() {
 }
 
 color();
+
+/*4-Implemente uma função que receba como parâmetro a string "Sexta-feira" e crie dinamicamente um botão com o nome "Sexta-feira".
+Adicione a este botão o ID "btn-friday" .
+Adicione este botão como filho/filha da tag <div> com classe "buttons-container".*/
+
+let buttonFriday = document.createElement("button");
+let friday = "Sexta-feira";
+
+function mufasa(friday) {
+  buttonFriday.innerText = friday;
+  buttonFriday.id = "btn-friday";
+  buttonsContainer.appendChild(buttonFriday);
+}
+
+mufasa(friday);
