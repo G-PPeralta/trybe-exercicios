@@ -18,8 +18,8 @@ const myWebpage = document.getElementById("my-spotrybefy");
 }*/
 
 function switchClass() {
-  document.getElementById("firstLi").classList.remove("tech");
-  document.getElementById("secondLi").classList.add("tech");
+  firstLi.classList.remove("tech");
+  secondLi.classList.add("tech");
 }
 
 switchClass();
