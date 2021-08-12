@@ -37,24 +37,44 @@ function createDaysOfTheMonth() {
     20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
   ];
 
-  let days = document.getElementById('days');
+  let days = document.getElementById("days");
 
-  for(let i = 0; i < dezDaysList.length; i += 1) {
+  for (let i = 0; i < dezDaysList.length; i += 1) {
     let armazenaOLaçoFor = dezDaysList[i];
-    let criaALi = document.createElement('li');
+    let criaALi = document.createElement("li");
     //criaALi.className = 'day';
     criaALi.innerHTML = armazenaOLaçoFor;
     days.appendChild(criaALi);
 
-    if(armazenaOLaçoFor === 24 || armazenaOLaçoFor === 31) {
-      criaALi.className = 'day holiday'
-    } else if(armazenaOLaçoFor === 4 || armazenaOLaçoFor === 11 || armazenaOLaçoFor === 18) {
-      criaALi.className = 'day friday'
-    } else if(armazenaOLaçoFor === 25) {
-      criaALi.className = 'day holiday friday'
+    if (armazenaOLaçoFor === 24 || armazenaOLaçoFor === 31) {
+      criaALi.className = "day holiday";
+    } else if (
+      armazenaOLaçoFor === 4 ||
+      armazenaOLaçoFor === 11 ||
+      armazenaOLaçoFor === 18
+    ) {
+      criaALi.className = "day friday";
+    } else if (armazenaOLaçoFor === 25) {
+      criaALi.className = "day holiday friday";
     } else {
-      criaALi.className = 'day';
+      criaALi.className = "day";
     }
   }
 }
-createDaysOfTheMonth()
+createDaysOfTheMonth();
+
+/*2-Implemente uma função que receba como parâmetro a string "Feriados" e crie dinamicamente um botão com o nome "Feriados".
+Adicione a este botão a ID "btn-holiday" .
+Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .*/
+
+let holiday = "feriados";
+let buttonsContainer = document.querySelector('.buttons-container')
+
+function holidays(holiday) {
+  let button = document.createElement("button");
+  button.innerText = holiday;
+  button.id = 'btn-holiday';
+  buttonsContainer.appendChild(button);
+}
+
+holidays(holiday);
