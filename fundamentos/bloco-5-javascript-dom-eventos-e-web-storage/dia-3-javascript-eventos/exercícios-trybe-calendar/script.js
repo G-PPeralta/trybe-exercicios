@@ -68,13 +68,28 @@ Adicione a este botão a ID "btn-holiday" .
 Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .*/
 
 let holiday = "feriados";
-let buttonsContainer = document.querySelector('.buttons-container')
+let buttonsContainer = document.querySelector(".buttons-container");
+let button = document.createElement("button");
 
 function holidays(holiday) {
-  let button = document.createElement("button");
   button.innerText = holiday;
-  button.id = 'btn-holiday';
+  button.id = "btn-holiday";
   buttonsContainer.appendChild(button);
 }
 
 holidays(holiday);
+
+/*3-Implemente uma função que adicione ao botão "Feriados" um evento de "click" que muda a cor de fundo dos dias que possuem a classe "holiday" .
+É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial com a cor "rgb(238,238,238)".*/
+
+function color() {
+  button.addEventListener("click", function changeColor() {
+    button.style.color = "red";
+  });
+
+  button.addEventListener("dblclick", function changeBackColor() {
+    button.style.color = "black";
+  });
+}
+
+color();
