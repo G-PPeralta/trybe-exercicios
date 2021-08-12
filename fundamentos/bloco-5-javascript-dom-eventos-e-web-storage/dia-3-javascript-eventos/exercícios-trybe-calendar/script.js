@@ -31,13 +31,13 @@ Os dias 24, 25 e 31 são feriados e, além da classe day , devem conter também 
 
 Os dias 4, 11, 18 e 25 são Sexta-feira. Eles devem conter a classe day e a classe friday . Ex: <li class="day friday">4</li>*/
 
+let days = document.getElementById("days");
+
 function createDaysOfTheMonth() {
   const dezDaysList = [
     29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
     20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
   ];
-
-  let days = document.getElementById("days");
 
   for (let i = 0; i < dezDaysList.length; i += 1) {
     let armazenaOLaçoFor = dezDaysList[i];
@@ -113,10 +113,26 @@ mufasa(friday);
 É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial exibindo os dias.*/
 
 function text() {
-
-  buttonFriday.addEventListener('click', function changeText () {
-    buttonFriday.innerText = 'MUFASA!';
-  })
+  buttonFriday.addEventListener("click", function changeText() {
+    buttonFriday.innerText = "MUFASA!";
+  });
 }
 
-text()
+text();
+
+/*6-Implemente duas funções que criem um efeito de "zoom". Ao passar o ponteiro do mouse em um dia do mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do mouse sair do dia, o texto deve retornar ao tamanho original.*/
+
+let daysOfTheMonth = document.querySelector(".day");
+
+function zoom() {
+  
+  daysOfTheMonth.addEventListener("mouseover", function zoomOver() {
+    for(let i = 0; i < daysOfTheMonth.length; i += 1) {
+      let percorreArray = daysOfTheMonth[i];
+      percorreArray.style.color = "green";
+    }
+    
+  });
+}
+
+zoom();
