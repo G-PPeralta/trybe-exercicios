@@ -112,9 +112,19 @@ mufasa(friday);
 /*5-Implemente uma função que adicione ao botão "Sexta-feira" um evento de "click" que modifica o texto exibido nos dias que são Sexta-feira.
 É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial exibindo os dias.*/
 
+let fridayDays = document.getElementsByClassName("friday");
+let fridayNewText = 'MUFASA!'
+let daysFriday = [4, 11, 18, 25];
+
 function text() {
   buttonFriday.addEventListener("click", function changeText() {
-    buttonFriday.innerText = "MUFASA!";
+    for(let i = 0; i < fridayDays.length; i += 1) {
+      if(fridayDays[i].innerHTML !== fridayNewText) {
+        fridayDays[i].innerHTML = fridayNewText;
+      } else {
+        fridayDays[i].innerHTML = daysFriday[i];
+      }
+    }
   });
 }
 
@@ -122,17 +132,34 @@ text();
 
 /*6-Implemente duas funções que criem um efeito de "zoom". Ao passar o ponteiro do mouse em um dia do mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do mouse sair do dia, o texto deve retornar ao tamanho original.*/
 
-let daysOfTheMonth = document.querySelector(".day");
+
 
 function zoom() {
+
+  let days = document.querySelector('#days')
   
-  daysOfTheMonth.addEventListener("mouseover", function zoomOver() {
-    for(let i = 0; i < daysOfTheMonth.length; i += 1) {
-      let percorreArray = daysOfTheMonth[i];
-      percorreArray.style.color = "green";
-    }
+  days.addEventListener("mouseover", function(event) {
+
+    event.target.style.zoom = "200%";
     
   });
 }
 
 zoom();
+
+function zoomOut () {
+
+  let days = document.querySelector('#days')
+
+  days.addEventListener("mouseout", function(event) {
+    event.target.style.zoom = "unset";
+  })
+}
+
+zoomOut();
+
+/*7-Implemente uma função que adiciona uma tarefa personalizada ao calendário. A função deve receber como parâmetro a string com o nome da tarefa (ex: "cozinhar") e criar dinamicamente um elemento com a tag <span> contendo a tarefa.
+O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks" .*/
+
+
+
