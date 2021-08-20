@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário</title>
+</head>
+<body>
+  <h1>FORMULÁRIO</h1>
+  <form action="" method="GET" enctype="multipart/form-data">
+
+    <label for="input-text">Digite o seu nome:</label> <!--propriedade para explicar o campo que está sendo usando -->
+                                                       <!--a propriedade for é pra criar um vínculo entre o label e o input utilizado, por isso usei a id do input-->
+
+    <input type="text" placeholder="digite alguma coisa" required name="texto" name="user" id="input-text"> <br><br>
+    <!--Name é pra dar nome ao que vai na URL na hora que submeto o formulário-->
+    <!--Required é pra proibir preenchimento vazio-->
+
+    <span>Senha:</span>
+    <input type="password" name="senha" required> <br><br>
+
+    <textarea name="" id="" cols="30" rows="10"></textarea> <br><br>
+    
+    <input type="checkbox" id="esporte-1" value="fut" name="esporte">Futebol
+    <input type="checkbox" id="esporte-2"  value="vol" name="esporte">Vôlei
+    <input type="checkbox" id="esporte-3" value="pet" name="esporte">Peteca
+    <input type="checkbox" id="esporte-4" value="bas" name="esporte">Basquete <br><br>
+    
+    <label for="hub1"><input type="radio" id="hub1" name="hub" value="sp">São Paulo</label>
+    <!--ao colocar o input dentro de uma tag label e colocar o id do input dentro do "for", eu consigo clicar em qualquer lugar da palavra para selecioná-la-->
+    <label for="hub2"><input type="radio" id="hub2" name="hub" value="sc">Florianópolis </label>   
+    <label for="hub3"><input type="radio" id="hub3" name="hub" value="bh">Belo Horizonte</label>
+    <!-- os names precisam ser iguais para ficarem dentro do mesmo contexto e eu só poder selecionar um input por vez-->
+    <br><br>
+
+    <select name="estado" id="dropdown-estado">
+      <option value="sp">São Paulo</option>
+      <option value="pr">Paraná</option>
+      <option value="sc">Santa Catarina</option>
+      <option value="rs">Rio Grande do Sul</option>
+    </select>
+    <br><br>
+
+    <input type="file" name="" id=""> <br><br>
+    <button type="submit" class="" name="" id="">Enviar</button>
+  </form>
+</body>
+</html>
