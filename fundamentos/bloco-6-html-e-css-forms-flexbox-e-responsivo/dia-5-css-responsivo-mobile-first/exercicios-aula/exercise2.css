@@ -1,24 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Besley&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Besley&family=Kaisei+Opti:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Besley&family=Kaisei+Opti:wght@400;500&family=Roboto&display=swap');
 
 body {
   padding: 20px;
-  font-family: 'Kaisei Opti', serif;
   font-size: 1.4rem;
   font-weight: 500;
-  background: #f3f3f3;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.8rem;
+  text-align: justify;
 }
 
 h1 {
+  font-family: 'Kaisei Opti', serif;
   text-align: center;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-family: 'Kaisei Opti', serif;
+  padding: 5px;
+}
+
+.container {
+  display: ;
+}
+
+img {
+  margin-left: 350px;
+  width: 650px;
+  height: 450px;
 }
 
 .list li {
+  font-family: 'Roboto', sans-serif;
   padding: 5px;
   margin-top: 5px;
 }
 
 .list2 li {
+  font-family: 'Roboto', sans-serif;
   list-style: none;
   padding: 5px;
   margin-top: 5px;
@@ -43,9 +65,16 @@ h1 {
     padding: 5px;
   }
 
+  .image {
+    margin-left: 25px;
+    width: 350px;
+    height: 200px;
+  }
+
   .list li {
     padding: 5px;
-    margin-top: 5px;
+    margin-top: 15px;
+    margin-bottom: 5px;
   }
 
   .list2 li {
