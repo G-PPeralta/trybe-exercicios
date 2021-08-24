@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Besley&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Besley&family=Kaisei+Opti:wght@400;500&display=swap');
+
+body {
+  padding: 20px;
+  font-family: 'Kaisei Opti', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  background: #f3f3f3;
+}
+
+h1 {
+  text-align: center;
+}
+
+.list li {
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.list2 li {
+  list-style: none;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  body {
+    background: #f3f3f3;
+    font-family: 'Besley', serif;
+    padding: 20px;
+    font-size: 1.1rem;
+    text-align: justify;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    padding: 5px;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    padding: 5px;
+  }
+
+  .list li {
+    padding: 5px;
+    margin-top: 5px;
+  }
+
+  .list2 li {
+    list-style: none;
+    padding: 5px;
+    margin-top: 5px;
+  }
+}
