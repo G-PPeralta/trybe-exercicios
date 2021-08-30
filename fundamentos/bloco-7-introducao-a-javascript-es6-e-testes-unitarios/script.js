@@ -64,8 +64,7 @@ function factorial(number) {
 }
 
 //forma ternária usando arrow function:
-const factorial = (number) =>
-  number === 0 || number === 1 ? 1 : number * factorial(number - 1);
+const factorial = (number) => number === 0 || number === 1 ? 1 : number * factorial(number - 1);
 
 
 
@@ -95,6 +94,10 @@ function longestWord(str) {
 
 //Arrow function
 const longestWord = (str) => str.split(" ").sort((a, b) => b.length - a.length)[0];
+
+//4-Escreva uma função que vai receber uma string como parâmetro. Sua função deverá procurar pela letra x em uma string qualquer que você determinar e substituir pela string que você passou como parâmetro. Sua função deve retornar essa nova string.
+
+const replaceString = (str) => "Tryber x aqui!".replace('x', ${str});
 
 
 
