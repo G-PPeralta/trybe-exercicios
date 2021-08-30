@@ -1,7 +1,15 @@
 window.onload = function () {
-  // let date = document.getElementById("date");
-  let btn = document.getElementById("btn-default");
   let forms = document.getElementById("cv-form");
+  let fullName = document.getElementById("full-name");
+  let email = document.getElementById("email-text");
+  let cpf = document.getElementById("cpf-text");
+  let adress = document.getElementById("adress-text");
+  let city = document.getElementById("city-text");
+  let state = document.getElementById("state-select");
+  let resume = document.getElementById("resume-text");
+  let job = document.getElementById("job");
+  let jobDescription = document.getElementById("job-description");
+  let date = document.getElementById("date");
   let select = document.getElementById("state-select");
   let states = [
     "AC",
@@ -57,12 +65,28 @@ window.onload = function () {
 
   isValidDate();
 
-  btn.addEventListener("click", stopDefault);
+  forms.addEventListener("submit", stopDefault);
 
-  function stopDefault(forms) {
-    forms.preventDefault();
+  function stopDefault(e) {
+    e.preventDefault();
+
+    checkInputs();
   }
 
-  stopDefault();
+  function checkInputs() {
+    let fullNameValue = fullName.value.trim();
+    let emailValue = email.value.trim();   
+    let cpfValue = cpf.value.trim();
+    let adressValue = adress.value.trim();
+    let cityValue = city.cpfValue.trim();
+    let stateValue = state.value;
+    let resumeValue = resume.value.trim();
+    let jobValue = job.value.trim();
+    let jobDescriptionValue = jobDescription.value.trim(); 
+    let dateValue = dateValue.value.trim();
+    let selectValue = select.value;
+
+    
+  }
   
 };
