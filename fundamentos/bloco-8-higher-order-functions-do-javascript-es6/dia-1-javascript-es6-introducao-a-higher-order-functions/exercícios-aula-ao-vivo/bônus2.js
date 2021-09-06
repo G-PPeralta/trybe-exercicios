@@ -20,12 +20,12 @@ const dragon = {
 
 const battleMembers = { mage, warrior, dragon };
 
-const dragonDamage = (minDamage, maxDamage) => {
-  minDamage = 15;
-  maxDamage = dragon.strength;
+const warriorDamage = (minDamage, maxDamage) => {
+  minDamage = 30;
+  maxDamage = warrior.strength * warrior.weaponDmg;
   maxDamageAttack = Math.floor(Math.random() * (maxDamage - minDamage +1) + minDamage);
-
+  
   return maxDamageAttack;
 }
 
-console.log(dragonDamage());
+console.log(warriorDamage());
