@@ -24,7 +24,7 @@ const warriorDamage = (minDamage, maxDamage) => {
   minDamage = 30;
   maxDamage = warrior.strength * warrior.weaponDmg;
   maxDamageAttack = Math.floor(Math.random() * (maxDamage - minDamage +1) + minDamage);
-  
+
   return maxDamageAttack;
 }
 
