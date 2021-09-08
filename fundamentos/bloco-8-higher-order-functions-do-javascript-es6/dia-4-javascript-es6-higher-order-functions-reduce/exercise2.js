@@ -66,12 +66,6 @@ const books = [
 const expectedResult =
   "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.";
 
-function reduceNames() {
-  return books
-    .map((element) => element.author.name)
-    .reduce((acc, book, index, arr) =>
-      index === arr.length - 1 ? `${acc}, ${book}.` : `${acc}, ${book}`
-    );
-}
+const reduceNames = () => books.map((element) => element.author.name).reduce((acc, book, index, arr) => index === arr.length - 1 ? `${acc}, ${book}.` : `${acc}, ${book}`);
 
 assert.strictEqual(reduceNames(), expectedResult);
