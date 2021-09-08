@@ -63,15 +63,10 @@ const books = [
   },
 ];
 
-const expectedResult = [
-  'Frank Herbert',
-  'George R. R. Martin',
-  'Isaac Asimov',
-  'J. R. R. Tolkien',
-];
+const expectedResult = 'O Senhor dos Anéis';
 
-const fantasyOrScienceFictionAuthors = () => books.filter(filterBooksGenre).map(element => element.author.name).sort();
+//Encontre o nome do livro escrito pela pessoa cujo nome registrado começa com três iniciais.
 
-const filterBooksGenre = (item) => (item.genre === 'Ficção Científica' || item.genre === 'Fantasia');
+const authorWith3DotsOnName = () => books.filter(book => book.author.name.startsWith('.', 7)).map(element => element.name).toString();
 
-assert.deepStrictEqual(fantasyOrScienceFictionAuthors(), expectedResult);
+assert.deepStrictEqual(authorWith3DotsOnName(), expectedResult);
