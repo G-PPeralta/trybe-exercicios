@@ -1,38 +1,46 @@
-const assert = require('assert');
+const assert = require("assert");
 
 const people = [
   {
-    name: 'Nicole',
+    name: "Nicole",
     bornIn: 1992,
-    nationality: 'Australian',
+    nationality: "Australian",
   },
   {
-    name: 'Harry',
+    name: "Harry",
     bornIn: 2008,
-    nationality: 'Australian',
+    nationality: "Australian",
   },
   {
-    name: 'Toby',
+    name: "Toby",
     bornIn: 1901,
-    nationality: 'Australian',
+    nationality: "Australian",
   },
   {
-    name: 'Frida',
+    name: "Frida",
     bornIn: 1960,
-    nationality: 'Dannish',
+    nationality: "Dannish",
   },
   {
-    name: 'Fernando',
+    name: "Fernando",
     bornIn: 2001,
-    nationality: 'Brazilian',
+    nationality: "Brazilian",
   },
 ];
 
 // escreva filterPeople abaixo
 
-const filteredPeople = (people) => {
-  return people.filter({nationality, bornIn} => nationality.nationality === 'Australian' && bornIn.bornIn <= 2000 && element.bornIn > 1900)
-};
+const filterPeople = (arr) => arr.filter(({ nationality, bornIn }) => nationality === "Australian" && bornIn <= 2000 && bornIn > 1900,);
 
-assert.deepStrictEqual(filteredPeople[0], { name: 'Nicole', bornIn: 1992, nationality: 'Australian' });
-assert.deepStrictEqual(filteredPeople[1], { name: 'Toby', bornIn: 1901, nationality: 'Australian' });
+const filteredPeople = filterPeople(people);
+
+assert.deepStrictEqual(filteredPeople[0], {
+  name: "Nicole",
+  bornIn: 1992,
+  nationality: "Australian",
+});
+assert.deepStrictEqual(filteredPeople[1], {
+  name: "Toby",
+  bornIn: 1901,
+  nationality: "Australian",
+});
