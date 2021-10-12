@@ -6,12 +6,10 @@ class Pokedex extends React.Component {
     super();
     this.state = {
       pokemon: 0,
-      type: ''
+      type: 'all',
     };
     this.handleButton = this.handleButton.bind(this);
     this.resetTotal = this.resetTotal.bind(this);
-    this.handleFire = this.handleFire.bind(this);
-    this.handlePsychic = this.handlePsychic.bind(this);
   }
 
   handleButton = () => {
@@ -28,22 +26,33 @@ class Pokedex extends React.Component {
     });
   };
 
-  handleFire = () => {
-    this.setState((prevState) => {
-      return {
-        pokemon: prevState.pokemon + 1,
-      };
-    });
+  handleFireButton = () => {
+    this.setState({ type: 'fire' });
   };
 
-  handlePsychic = () => {};
+  handlePsychicButton = () => {
+    this.setState({ type: 'psychic' });
+  };
+
+  handleAllTypesButton = () => {
+    this.setState({ type: 'all' });
+  };
 
   render() {
     const { pokemons } = this.props;
     let currentPokemon = this.state.pokemon;
+
     const allPokemonsLength = pokemons.map((item) => (
       <Pokemon key={item.id} pokemon={item} />
     )).length;
+
+    const allFirePokemonsLength = pokemons
+      .filter((item) => item.type === 'Fire')
+      .map((item) => <Pokemon key={item.id} pokemon={item} />).length;
+
+    const allPsychicPokemonsLength = pokemons
+      .filter((item) => item.type === 'Psychic')
+      .map((item) => <Pokemon key={item.id} pokemon={item} />).length;
 
     const checkPokemons = () => {
       if (currentPokemon > allPokemonsLength - 1) {
@@ -53,26 +62,65 @@ class Pokedex extends React.Component {
       }
     };
 
-    const allPokemons = pokemons.map((item) => (
-      <Pokemon key={item.id} pokemon={item} />
-    ))[checkPokemons()];
+    const checkFirePokemons = () => {
+      if (currentPokemon > allFirePokemonsLength - 1) {
+        return this.resetTotal();
+      } else {
+        return currentPokemon;
+      }
+    };
 
-    const fireTypes = () => pokemons
-      .filter((item) => item.type === 'Fire')
-      .map((item) => <Pokemon key={item.id} pokemon={item} />);
+    const checkPsychicPokemons = () => {
+      if (currentPokemon > allPsychicPokemonsLength - 1) {
+        return this.resetTotal();
+      } else {
+        return currentPokemon;
+      }
+    };
+
+    const allPokemons = () =>
+      pokemons.map((item) => <Pokemon key={item.id} pokemon={item} />)[
+        checkPokemons()
+      ];
+
+    const fireTypes = () =>
+      pokemons
+        .filter((item) => item.type === 'Fire')
+        .map((item) => <Pokemon key={item.id} pokemon={item} />)[
+        checkFirePokemons()
+      ];
+
+    const psychicTypes = () =>
+      pokemons
+        .filter((item) => item.type === 'Psychic')
+        .map((item) => <Pokemon key={item.id} pokemon={item} />)[
+        checkPsychicPokemons()
+      ];
+
+    const renderPokemons = () => {
+      if (this.state.type === 'all') {
+        return allPokemons();
+      } else if (this.state.type === 'psychic') {
+        return psychicTypes();
+      } else {
+        return fireTypes();
+      }
+    };
 
     return (
       <div>
-        <div style={pokedex}>{allPokemons}</div>
-        
-        <button style={btnStyle} onClick={this.handleButton}>
-          Change Pokemon
+        <div style={pokedex}>{renderPokemons()}</div>
+        <button style={btnStyle} onClick={() => this.handleButton()}>
+          Next Pokemon
         </button>
-        <button style={btnStyle} onClick={() => this.handleFire()}>
+        <button style={btnStyle} onClick={() => this.handleFireButton()}>
           Fire
         </button>
-        <button style={btnStyle} onClick={this.handlePsychic}>
+        <button style={btnStyle} onClick={() => this.handlePsychicButton()}>
           Psychic
+        </button>
+        <button style={btnStyle} onClick={() => this.handleAllTypesButton()}>
+          All
         </button>
         <button style={btnStyle} onClick={this.resetTotal}>
           Reset
