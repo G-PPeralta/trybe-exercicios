@@ -1,4 +1,5 @@
 import React from 'react';
+import Professional from './Professional';
 
 class Form extends React.Component {
   constructor() {
@@ -11,13 +12,24 @@ class Form extends React.Component {
       city: '',
       countryState: '',
       houseType: '',
+      resume: '',
+      job: '',
+      jobDescription: '',
     };
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange = (event) => {
-    const {name, type, value, checked} = event.target
-    type === 'checkbox' ? this.setState({[name]: checked}) : this.setState({[name]: value})
+    const { name, type, value, checked } = event.target;
+    type === 'checkbox'
+      ? this.setState({ [name]: checked })
+      : this.setState({ [name]: value });
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    alert('Enviou')
   };
 
   render() {
@@ -56,7 +68,7 @@ class Form extends React.Component {
     ));
 
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <fieldset>
           <div>
             <label>Full Name: </label>
@@ -93,7 +105,7 @@ class Form extends React.Component {
           <div>
             <label>Adress: </label>
             <input
-              name='cpf'
+              name='adress'
               type='text'
               value={this.state.adress}
               onChange={this.handleChange}
@@ -132,17 +144,26 @@ class Form extends React.Component {
                 value='house'
                 checked={this.state.houseType === 'house'}
                 onChange={this.handleChange}
-              /> House
+              />
+              House
               <input
                 type='radio'
                 name='houseType'
                 value='apartment'
                 checked={this.state.houseType === 'apartment'}
                 onChange={this.handleChange}
-              /> Apartment
+              />
+              Apartment
             </div>
           </div>
         </fieldset>
+        <Professional
+          resume={this.state.resume}
+          job={this.state.job}
+          jobDescription={this.state.jobDescription}
+          changeHandler={this.handleChange}
+        />
+        <button type='submit'>Registre-se!</button>
       </form>
     );
   }

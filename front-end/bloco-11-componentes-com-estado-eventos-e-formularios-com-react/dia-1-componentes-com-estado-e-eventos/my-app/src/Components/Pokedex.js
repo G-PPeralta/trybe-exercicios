@@ -8,8 +8,6 @@ class Pokedex extends React.Component {
       pokemon: 0,
       type: 'all',
     };
-    this.handleButton = this.handleButton.bind(this);
-    this.resetTotal = this.resetTotal.bind(this);
   }
 
   handleButton = () => {
