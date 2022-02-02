@@ -1,0 +1,59 @@
+SELECT * FROM Pixar.Movies;
+SELECT * FROM Pixar.BoxOffice;
+SELECT * FROM Pixar.Theater;
+
+SELECT m.title, b.domestic_sales, b.international_sales
+FROM Movies AS m
+INNER JOIN BoxOffice AS b
+ON m.id = b.movie_id;
+
+SELECT m.title, b.domestic_sales, b.international_sales
+FROM Movies AS m
+INNER JOIN BoxOffice AS b
+ON m.id = b.movie_id
+WHERE international_sales > domestic_sales;
+
+SELECT m.title, b.rating
+FROM Movies AS m
+INNER JOIN BoxOffice AS b
+ON m.id = b.movie_id
+ORDER BY rating DESC;
+
+SELECT * FROM Theater AS t
+LEFT JOIN Movies AS m
+ON t.id = m.id
+ORDER BY name;
+
+SELECT 
+	t.id,
+    t.name,
+    t.location,
+	m.id,
+    m.title,
+    m.director,
+    m.year,
+    m.length_minutes,
+    m.theater_id
+FROM Theater AS t
+RIGHT JOIN Movies AS m
+ON m.id = t.id
+ORDER BY name;
+
+SELECT 
+	m.id,
+	m.title,
+    m.director,
+    m.year,
+    m.length_minutes,
+    m.theater_id,
+    b.rating
+FROM Movies as m
+INNER JOIN BoxOffice AS b
+ON m.id = b.movie_id
+WHERE rating > 8;
+    
+
+
+
+
+	

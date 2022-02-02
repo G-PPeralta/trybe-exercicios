@@ -1,0 +1,34 @@
+SELECT * FROM hr.employees;
+
+SELECT MAX(SALARY) AS maior_salario FROM employees;
+
+SELECT (MAX(SALARY) - MIN(SALARY)) AS diferença FROM employees;
+
+SELECT JOB_ID, AVG(SALARY) AS media FROM hr.employees
+GROUP BY JOB_ID
+ORDER BY media DESC;
+
+SELECT SUM(SALARY) FROM hr.employees;
+
+SELECT MAX(ROUND(SALARY, 2)) AS maior_salario,
+MIN(ROUND(SALARY, 2)) AS menor_salario,
+SUM(ROUND(SALARY, 2)) AS soma,
+AVG(ROUND(SALARY, 2)) AS media_salarial
+FROM hr.employees;
+
+SELECT JOB_ID , COUNT(*) AS 'total'
+FROM hr.employees
+WHERE JOB_ID = "IT_PROG";
+
+SELECT JOB_ID, SUM(SALARY) FROM hr.employees
+GROUP BY JOB_ID;
+
+SELECT JOB_ID, SUM(SALARY) FROM hr.employees
+GROUP BY JOB_ID
+HAVING JOB_ID = 'IT_PROG';
+
+SELECT JOB_ID, AVG(SALARY) AS MEDIA FROM hr.employees
+GROUP BY JOB_ID
+HAVING JOB_ID != 'IT_PROG'
+ORDER BY MEDIA DESC;
+
