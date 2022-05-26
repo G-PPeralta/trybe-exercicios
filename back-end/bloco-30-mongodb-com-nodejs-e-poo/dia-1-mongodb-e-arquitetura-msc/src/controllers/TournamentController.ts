@@ -4,7 +4,7 @@ import TournamentService from "../services/TournamentService";
 class TournamentController {
   constructor(private tournamentService = new TournamentService()) {}
 
-  public async getTournaments(_req: Request, res: Response): Promise<Response> {
+  public getTournaments = async (_req: Request, res: Response): Promise<Response> => {
     try {
       const tournaments = await this.tournamentService.getTournaments();
       return res.status(200).json(tournaments);
